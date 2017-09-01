@@ -99,10 +99,13 @@ process(clk,push_i, load)
     begin
         if (load = '1') then -- currently done asynchronously without clock
             
-        if (sub = 1) then
+        if (sub_signal = 1) then
             if(a0_int = b0_int and a1_int = b1_int) then
                 -- the two inputs are equal
-                sub <= '0';
+                sub_signal <= '0';
+            elsif(a1_int > b1_int or (a1_int = b1_int and a0_int > b0_int)) then
+					-- A > B
+					if (a0_int > b0_int
     
 
 end Behavioral;
