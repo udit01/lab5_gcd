@@ -40,10 +40,10 @@ signal ZERO : std_logic;
 signal checked_valid : std_logic;
 signal load_signal : std_logic;
 signal d : std_logic_vector (15 downto 0);
-signal a0_int :integer range 0 to 15;
-signal a1_int :integer range 0 to 15;
-signal b0_int :integer range 0 to 15;
-signal b1_int :integer range 0 to 15;
+signal a0_int :integer range 0 to 15:=1;
+signal a1_int :integer range 0 to 15:=0;
+signal b0_int :integer range 0 to 15:=1;
+signal b1_int :integer range 0 to 15:=0;
 
 signal a0_int_raw :integer range 0 to 15;
 signal a1_int_raw :integer range 0 to 15;

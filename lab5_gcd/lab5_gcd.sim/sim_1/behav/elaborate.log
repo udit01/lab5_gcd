@@ -1,0 +1,9 @@
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /media/udit01/files/opt/Vivado/2017.2/bin/unwrapped/lnx64.o/xelab -wto 89f93dd96d2b4071ae571b1130427e45 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab5_gcd_tb_behav xil_defaultlib.lab5_gcd_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+ERROR: [XSIM 43-3249] File /home/udit01/Desktop/215/lab5_gcd/lab5_gcd/lab5_gcd.srcs/sources_1/new/lab5_gcd.vhd, line 43. Unresolved signal "a0_int" is multiply driven.
