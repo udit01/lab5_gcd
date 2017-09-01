@@ -103,6 +103,6 @@ process(clk,push_i, load)
             if(a0_int = b0_int and a1_int = b1_int) then
                 -- the two inputs are equal
                 sub <= '0';
-    
+end process;
 
-end Behavioral;
+end architecture ;
