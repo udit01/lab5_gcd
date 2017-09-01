@@ -82,14 +82,28 @@ process(clk,push_i, load)
             elsif(a1_int > b1_int or (a1_int = b1_int and a0_int > b0_int)) then
 					-- A > B
 					if (a0_int > b0_int or a0_int = b0_int) then
-							d0 = a0_int - b0_int;
-							d1 = a1_int - b1_int;
+							d0 <= a0_int - b0_int;
+							d1 <= a1_int - b1_int;
 					else
-						d0 = 10 - b0_int + a0_int;
-						d1 = a1_int - b1_int - 1;
+						d0 <= 10 - b0_int + a0_int;
+						d1 <= a1_int - b1_int - 1;
 					end if;
 					-- assign the difference to A
 					a0_int <= d0;
 					a1_int <=d1;
+				elsif(a1_int < b1_int or (a1_int = b1_int and a0_int < b0_int)) then
+					-- B > A
+					if (b0_int > a0_int and b0_int = a0_int) then
+							d0 <= b0_int - a0_int;
+							d1 <= a1_int - b1_int;
+					else
+							d0 <= 10 - a0_int + b0_int;
+							d1 <= b1_int - a1_int - 1;
+					end if;
+					-- assign the difference to B
+					b0_int <= d0;
+					b1_int <= d1;
+				end if;
+		end if;
 end process;
 end architecture ;
