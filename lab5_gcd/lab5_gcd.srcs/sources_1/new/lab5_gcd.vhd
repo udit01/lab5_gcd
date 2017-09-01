@@ -5,7 +5,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity lab5_gcd is
-    Port ( a_i : in STD_LOGIC;
+    Port ( a_i : in STD_LOGIC_VECTOR (7 downto 0);
            b_i : in STD_LOGIC_VECTOR (7 downto 0);
            push_i : in STD_LOGIC;
            pushbutton : in STD_LOGIC;
@@ -44,6 +44,12 @@ signal a0_int :integer range 0 to 15;
 signal a1_int :integer range 0 to 15;
 signal b0_int :integer range 0 to 15;
 signal b1_int :integer range 0 to 15;
+
+signal a0_int_raw :integer range 0 to 15;
+signal a1_int_raw :integer range 0 to 15;
+signal b0_int_raw :integer range 0 to 15;
+signal b1_int_raw :integer range 0 to 15;
+
 signal d0 : integer range 0 to 15;
 signal d1: integer range 0 to 15;
 
@@ -56,10 +62,13 @@ begin
 ONE <= '1';
 ZERO <= '0';
 
-a0_int <= to_integer(unsigned(a_i(3 downto 0)));
-a1_int <= to_integer(unsigned(a_i(7 downto 4)));
-b0_int <= to_integer(unsigned(b_i(3 downto 0)));
-b1_int <= to_integer(unsigned(b_i(7 downto 4)));
+a0_int_raw <= to_integer(unsigned(a_i(3 downto 0)));
+a1_int_raw <= to_integer(unsigned(a_i(7 downto 4)));
+b0_int_raw <= to_integer(unsigned(b_i(3 downto 0)));
+b1_int_raw <= to_integer(unsigned(b_i(7 downto 4)));
+
+checked_valid <= '1' WHEN ((a0_int_raw<10 AND a1_int_raw<10 AND b0_int_raw<10 AND b1_int_raw<10) AND (NOT((a0_int_raw=0 AND a1_int_raw=0) OR (b0_int_raw=0 AND b1_int_raw=0)))) ELSE '0';
+op_valid <= checked_valid;
 
 display: lab4_seven_segment_display PORT MAP(
     b => d,
@@ -68,12 +77,28 @@ display: lab4_seven_segment_display PORT MAP(
     anode => anode  ,
     cathode => cathode
 );
+load_signal <= '1' when ((push_i = '1')AND (checked_valid='1')) ELSE'0';
+load<=load_signal;
+process(push_i,clk)
+begin
+-- if (push_i = '1') then -- currently done asynchronously without clock
+     if(load_signal='1') then
+        if(clk = '1' and clk'EVENT) then
+            a0_int <= a0_int_raw;
+            a1_int <= a1_int_raw;
+            b0_int <= b0_int_raw;
+            b1_int <= b1_int_raw;
+            sub_signal <='1';
+            load_signal <= '0';
+        end if;
+     end if;
+-- end if;   
+end process;
 
-process(clk,push_i, load)
+process(clk)
     begin
-        if (load = '1') then -- currently done asynchronously without clock
-            
-        if (sub_signal = 1) then
+       
+        if (sub_signal = '1') then
             if(a0_int = b0_int and a1_int = b1_int) then
                 -- the two inputs are equal
                 sub_signal <= '0';
@@ -106,4 +131,9 @@ process(clk,push_i, load)
 				end if;
 		end if;
 end process;
+
+    d(15 downto 12) <= std_logic_vector(to_unsigned(b1_int,4));
+    d(11 downto 8) <= std_logic_vector(to_unsigned(b0_int,4));
+    d(7 downto 4) <= std_logic_vector(to_unsigned(a1_int,4));
+    d(3 downto 0) <= std_logic_vector(to_unsigned(a0_int,4));
 end architecture ;
