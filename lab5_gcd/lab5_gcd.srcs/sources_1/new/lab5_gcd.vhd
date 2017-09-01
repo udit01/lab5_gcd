@@ -4,6 +4,34 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 use IEEE.NUMERIC_STD.ALL;
 
+entity counter32bit is
+    Port 
+    ( clk : in STD_LOGIC;
+      CLOCKER: out std_logic_vector(31 downto 0) 
+    );
+end counter32bit;
+
+architecture Behavioral of counter32bit is
+signal counter : unsigned(31 downto 0);
+begin
+    process(clk)
+    begin
+        if clk='1' and clk'event then
+            counter<=counter + 1;
+        end if;
+    end process;
+CLOCKER <= std_logic_vector(counter);
+
+end Behavioral;
+
+
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+use IEEE.NUMERIC_STD.ALL;
+
+
 entity lab5_gcd is
     Port ( a_i : in STD_LOGIC_VECTOR (7 downto 0);
            b_i : in STD_LOGIC_VECTOR (7 downto 0);
@@ -28,7 +56,13 @@ PORT(
     );
 END COMPONENT;
 
-signal COUNTER1 : std_logic_vector (15 downto 0);
+component counter32bit port (
+        clk : in std_logic;          --clk,
+        CLOCKER : out std_logic_vector           --slow_clock
+        );
+      end component;
+      
+--signal COUNTER1 : std_logic_vector (15 downto 0);
 --signal COUNTER2 : std_logic_vector (15 downto 0);
 --signal a_checked : std_logic_vector (7 downto 0);
 --signal b_checked : std_logic_vector (7 downto 0);
@@ -52,7 +86,8 @@ signal b1_int_raw :integer range 0 to 15;
 
 signal d0 : integer range 0 to 15;
 signal d1: integer range 0 to 15;
-
+signal clock : std_logic;
+signal slowClock: std_logic_vector(31 downto 0);
 --signal a : std_logic_vector (7 downto 0);
 --signal b : std_logic_vector (7 downto 0);
 --signal aTOsub : std_logic_vector (7 downto 0);
@@ -77,8 +112,14 @@ display: lab4_seven_segment_display PORT MAP(
     anode => anode  ,
     cathode => cathode
 );
+  CLOCKER_inst: counter32bit port map(
+    clk=> clk,
+    CLOCKER=>slowClock
+);
+  
 load_signal <= '1' when ((push_i = '1')AND (checked_valid='1')) ELSE'0';
 load<=load_signal;
+clock <= clk when (pushbutton = '1') else slowClock(27);
 process(push_i,clk)
 begin
 -- if (push_i = '1') then -- currently done asynchronously without clock
@@ -95,10 +136,10 @@ begin
 -- end if;   
 end process;
 
-process(clk)
+process(clock)
     begin
        
-        if (sub_signal = '1') then
+        if (sub_signal = '1' AND (clock='1'AND clock'EVENT)) then
             if(a0_int = b0_int and a1_int = b1_int) then
                 -- the two inputs are equal
                 sub_signal <= '0';
