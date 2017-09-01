@@ -120,26 +120,21 @@ display: lab4_seven_segment_display PORT MAP(
 load_signal <= '1' when ((push_i = '1')AND (checked_valid='1')) ELSE'0';
 load<=load_signal;
 clock <= clk when (pushbutton = '1') else slowClock(27);
-process(push_i,clk)
-begin
--- if (push_i = '1') then -- currently done asynchronously without clock
-     if(load_signal='1') then
-        if(clk = '1' and clk'EVENT) then
-            a0_int <= a0_int_raw;
-            a1_int <= a1_int_raw;
-            b0_int <= b0_int_raw;
-            b1_int <= b1_int_raw;
-            sub_signal <='1';
-            load_signal <= '0';
-        end if;
-     end if;
--- end if;   
-end process;
 
-process(clock)
+
+process(clock, clk, push_i)
     begin
-       
-        if (sub_signal = '1' AND (clock='1'AND clock'EVENT)) then
+        if(load_signal='1') then
+			  if(clk = '1' and clk'EVENT) then
+					a0_int <= a0_int_raw;
+					a1_int <= a1_int_raw;
+					b0_int <= b0_int_raw;
+					b1_int <= b1_int_raw;
+					sub_signal <='1';
+					load_signal <= '0';
+			  end if;
+
+        elsif (sub_signal = '1' AND (clock='1'AND clock'EVENT)) then
             if(a0_int = b0_int and a1_int = b1_int) then
                 -- the two inputs are equal
                 sub_signal <= '0';
