@@ -68,11 +68,11 @@ component counter32bit port (
 --signal b_checked : std_logic_vector (7 downto 0);
 --signal CLOCK31 : std_logic;
 --signal clock_mod : std_logic;
-signal sub_signal: std_logic;
+signal sub_signal: std_logic:='0';
 signal ONE : std_logic ;
 signal ZERO : std_logic;
 signal checked_valid : std_logic;
-signal load_signal : std_logic;
+signal load_signal : std_logic :='0';
 signal d : std_logic_vector (15 downto 0);
 signal a0_int :integer range 0 to 15:=1;
 signal a1_int :integer range 0 to 15:=0;
@@ -119,20 +119,21 @@ display: lab4_seven_segment_display PORT MAP(
   
 load_signal <= '1' when ((push_i = '1')AND (checked_valid='1')) ELSE'0';
 load<=load_signal;
+sub<=sub_signal;
 clock <= clk when (pushbutton = '1') else slowClock(27);
 
 
 process(clock, clk, push_i)
     begin
         if(load_signal='1') then
-			  if(clk = '1' and clk'EVENT) then
+--			  if(clk = '1' and clk'EVENT) then
 					a0_int <= a0_int_raw;
 					a1_int <= a1_int_raw;
 					b0_int <= b0_int_raw;
 					b1_int <= b1_int_raw;
 					sub_signal <='1';
 					load_signal <= '0';
-			  end if;
+--			  end if;
 
         elsif (sub_signal = '1' AND (clock='1'AND clock'EVENT)) then
             if(a0_int = b0_int and a1_int = b1_int) then
