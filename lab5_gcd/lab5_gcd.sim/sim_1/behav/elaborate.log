@@ -1,6 +1,6 @@
 Vivado Simulator 2017.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: /media/udit01/files/opt/Vivado/2017.2/bin/unwrapped/lnx64.o/xelab -wto 89f93dd96d2b4071ae571b1130427e45 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab5_gcd_tb_behav xil_defaultlib.lab5_gcd_tb -log elaborate.log 
+Running: /media/udit01/files/opt/Vivado/2017.2/bin/unwrapped/lnx64.o/xelab -wto 89f93dd96d2b4071ae571b1130427e45 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab5_gcd_behav xil_defaultlib.lab5_gcd -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -54,6 +54,5 @@ Compiling architecture inv_v of entity unisim.INV [inv_default]
 Compiling architecture behavioral of entity xil_defaultlib.binary_to_7_segment_display_MUSER_lab4_seven_segment_display [binary_to_7_segment_display_muse...]
 Compiling architecture behavioral of entity xil_defaultlib.lab4_seven_segment_display [lab4_seven_segment_display_defau...]
 Compiling architecture behavioral of entity xil_defaultlib.counter32bit [counter32bit_default]
-Compiling architecture behavioral of entity xil_defaultlib.lab5_gcd [lab5_gcd_default]
-Compiling architecture behavior of entity xil_defaultlib.lab5_gcd_tb
-Built simulation snapshot lab5_gcd_tb_behav
+Compiling architecture behavioral of entity xil_defaultlib.lab5_gcd
+Built simulation snapshot lab5_gcd_behav

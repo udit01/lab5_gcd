@@ -72,7 +72,7 @@ signal sub_signal: std_logic:='0';
 signal ONE : std_logic ;
 signal ZERO : std_logic;
 signal checked_valid : std_logic;
-signal load_signal : std_logic :='0';
+signal load_signal : std_logic ;
 signal d : std_logic_vector (15 downto 0);
 signal a0_int :integer range 0 to 15:=1;
 signal a1_int :integer range 0 to 15:=0;
@@ -117,7 +117,7 @@ display: lab4_seven_segment_display PORT MAP(
     CLOCKER=>slowClock
 );
   
-load_signal <= '1' when ((push_i = '1')AND (checked_valid='1')) ELSE'0';
+--load_signal <= '1' when ((push_i = '1')AND (checked_valid='1')) ELSE'0';
 load<=load_signal;
 sub<=sub_signal;
 clock <= clk when (pushbutton = '1') else slowClock(27);
@@ -125,6 +125,12 @@ clock <= clk when (pushbutton = '1') else slowClock(27);
 
 process(clock, clk, push_i)
     begin
+        if(push_i = '1' AND push_i'EVENT)then
+            if(checked_valid='1') then
+                load_signal <= '1';
+            end if;
+         end if;
+        
         if(load_signal='1') then
 --			  if(clk = '1' and clk'EVENT) then
 					a0_int <= a0_int_raw;
@@ -140,7 +146,7 @@ process(clock, clk, push_i)
                 -- the two inputs are equal
                 sub_signal <= '0';
 
-                sub_signal <= '0';
+--                sub_signal <= '0';
             elsif(a1_int > b1_int or (a1_int = b1_int and a0_int > b0_int)) then
 					-- A > B
 					if (a0_int > b0_int or a0_int = b0_int) then

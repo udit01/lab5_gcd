@@ -2,12 +2,12 @@
 # Webtalk v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:10 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Fri Sep  1 23:28:09 2017
-# Process ID: 1544
+# Start of session at: Sat Sep  2 15:23:17 2017
+# Process ID: 19957
 # Current directory: /home/udit01/Desktop/215/lab5_gcd/lab5_gcd/lab5_gcd.sim/sim_1/behav
-# Command line: wbtcv -mode batch -source /home/udit01/Desktop/215/lab5_gcd/lab5_gcd/lab5_gcd.sim/sim_1/behav/xsim.dir/lab5_gcd_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv -mode batch -source /home/udit01/Desktop/215/lab5_gcd/lab5_gcd/lab5_gcd.sim/sim_1/behav/xsim.dir/lab5_gcd_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: /home/udit01/Desktop/215/lab5_gcd/lab5_gcd/lab5_gcd.sim/sim_1/behav/webtalk.log
 # Journal file: /home/udit01/Desktop/215/lab5_gcd/lab5_gcd/lab5_gcd.sim/sim_1/behav/webtalk.jou
 #-----------------------------------------------------------
-source /home/udit01/Desktop/215/lab5_gcd/lab5_gcd/lab5_gcd.sim/sim_1/behav/xsim.dir/lab5_gcd_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Fri Sep  1 23:28:09 2017...
+source /home/udit01/Desktop/215/lab5_gcd/lab5_gcd/lab5_gcd.sim/sim_1/behav/xsim.dir/lab5_gcd_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sat Sep  2 15:23:17 2017...

@@ -9,4 +9,4 @@ then
 exit $RETVAL
 fi
 }
-ExecStep $xv_path/bin/xelab -wto 89f93dd96d2b4071ae571b1130427e45 -m64 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab5_gcd_tb_behav xil_defaultlib.lab5_gcd_tb -log elaborate.log
+ExecStep $xv_path/bin/xelab -wto 89f93dd96d2b4071ae571b1130427e45 -m64 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot lab5_gcd_behav xil_defaultlib.lab5_gcd -log elaborate.log

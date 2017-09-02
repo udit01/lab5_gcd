@@ -20,5 +20,3 @@ INFO: [VRFC 10-307] analyzing entity lab4_seven_segment_display
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/udit01/Desktop/215/lab5_gcd/lab5_gcd/lab5_gcd.srcs/sources_1/new/lab5_gcd.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity counter32bit
 INFO: [VRFC 10-307] analyzing entity lab5_gcd
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/udit01/Desktop/215/lab5_gcd/lab5_gcd/lab5_gcd.srcs/sim_1/imports/Downloads/lab5_gcd_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity lab5_gcd_tb

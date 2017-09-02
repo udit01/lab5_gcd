@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="lab5_gcd_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="lab5_gcd" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1003488334fs"></ZoomStartTime>
+      <ZoomEndTime time="1007248335fs"></ZoomEndTime>
+      <Cursor1Time time="1004458000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="135"></NameColumnWidth>
+      <ValueColumnWidth column_width="76"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="28" />
+   <wvobject type="array" fp_name="/lab5_gcd/a_i">
+      <obj_property name="ElementShortName">a_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">a_i[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/lab5_gcd/b_i">
+      <obj_property name="ElementShortName">b_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">b_i[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/lab5_gcd/push_i">
+      <obj_property name="ElementShortName">push_i</obj_property>
+      <obj_property name="ObjectShortName">push_i</obj_property>
+      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/lab5_gcd/pushbutton">
+      <obj_property name="ElementShortName">pushbutton</obj_property>
+      <obj_property name="ObjectShortName">pushbutton</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/lab5_gcd/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/lab5_gcd/load">
+      <obj_property name="ElementShortName">load</obj_property>
+      <obj_property name="ObjectShortName">load</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/lab5_gcd/sub">
+      <obj_property name="ElementShortName">sub</obj_property>
+      <obj_property name="ObjectShortName">sub</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/lab5_gcd/op_valid">
+      <obj_property name="ElementShortName">op_valid</obj_property>
+      <obj_property name="ObjectShortName">op_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/lab5_gcd/cathode">
+      <obj_property name="ElementShortName">cathode[6:0]</obj_property>
+      <obj_property name="ObjectShortName">cathode[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/lab5_gcd/anode">
+      <obj_property name="ElementShortName">anode[3:0]</obj_property>
+      <obj_property name="ObjectShortName">anode[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/lab5_gcd/sub_signal">
+      <obj_property name="ElementShortName">sub_signal</obj_property>
+      <obj_property name="ObjectShortName">sub_signal</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/lab5_gcd/ONE">
+      <obj_property name="ElementShortName">ONE</obj_property>
+      <obj_property name="ObjectShortName">ONE</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/lab5_gcd/ZERO">
+      <obj_property name="ElementShortName">ZERO</obj_property>
+      <obj_property name="ObjectShortName">ZERO</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/lab5_gcd/checked_valid">
+      <obj_property name="ElementShortName">checked_valid</obj_property>
+      <obj_property name="ObjectShortName">checked_valid</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/lab5_gcd/load_signal">
+      <obj_property name="ElementShortName">load_signal</obj_property>
+      <obj_property name="ObjectShortName">load_signal</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/lab5_gcd/d">
+      <obj_property name="ElementShortName">d[15:0]</obj_property>
+      <obj_property name="ObjectShortName">d[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/lab5_gcd/a0_int">
+      <obj_property name="ElementShortName">a0_int</obj_property>
+      <obj_property name="ObjectShortName">a0_int</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/lab5_gcd/a1_int">
+      <obj_property name="ElementShortName">a1_int</obj_property>
+      <obj_property name="ObjectShortName">a1_int</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/lab5_gcd/b0_int">
+      <obj_property name="ElementShortName">b0_int</obj_property>
+      <obj_property name="ObjectShortName">b0_int</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/lab5_gcd/b1_int">
+      <obj_property name="ElementShortName">b1_int</obj_property>
+      <obj_property name="ObjectShortName">b1_int</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/lab5_gcd/a0_int_raw">
+      <obj_property name="ElementShortName">a0_int_raw</obj_property>
+      <obj_property name="ObjectShortName">a0_int_raw</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/lab5_gcd/a1_int_raw">
+      <obj_property name="ElementShortName">a1_int_raw</obj_property>
+      <obj_property name="ObjectShortName">a1_int_raw</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/lab5_gcd/b0_int_raw">
+      <obj_property name="ElementShortName">b0_int_raw</obj_property>
+      <obj_property name="ObjectShortName">b0_int_raw</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/lab5_gcd/b1_int_raw">
+      <obj_property name="ElementShortName">b1_int_raw</obj_property>
+      <obj_property name="ObjectShortName">b1_int_raw</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/lab5_gcd/d0">
+      <obj_property name="ElementShortName">d0</obj_property>
+      <obj_property name="ObjectShortName">d0</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/lab5_gcd/d1">
+      <obj_property name="ElementShortName">d1</obj_property>
+      <obj_property name="ObjectShortName">d1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/lab5_gcd/clock">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/lab5_gcd/slowClock">
+      <obj_property name="ElementShortName">slowClock[31:0]</obj_property>
+      <obj_property name="ObjectShortName">slowClock[31:0]</obj_property>
+   </wvobject>
+</wave_config>
